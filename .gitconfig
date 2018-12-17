@@ -1,0 +1,33 @@
+[core]
+	excludesfile = ~/.gitexclude
+	pager = less -x1,5
+
+[user]
+	email = karl.emil.nilsson@gmail.com
+	name = Emil Nilsson
+
+[alias]
+	blog = log --oneline --graph --all
+	lo = log --oneline
+	co = checkout
+	sm = submodule
+	squash = commit --squash
+	fixup = commit --fixup
+	mt = mergetool
+	dt = difftool
+	st = status
+	
+[pull]
+	rebase = preserve
+
+[rebase]
+	autosquash = true
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	tool = vimdiff
+
+[mergetool]
+	keepBackup=false
