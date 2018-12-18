@@ -1,3 +1,16 @@
+" source .vimrc in working directory if present
+" but do not allow running shell scripts or writing to files
+set exrc
+set secure
+
+filetype plugin on
+filetype indent on
+
+" Set beam in insert mode, underline in replace and block in normal
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<ESC>[4 q"
+let &t_EI = "\<ESC>[2 q"
+
 " highlight search results
 set hlsearch
 noremap <silent> <cr> :noh <return><cr>
@@ -10,6 +23,16 @@ set showmatch
 
 " show relative line numbers
 set relativenumber
+
+" hightlight currentline
+set cursorline
+
+" reread file when changed from outside
+set autoread
+
+" use case-insensitive search
+" except when using capital letters
+set smartcase
 
 set encoding=utf8
 set splitbelow
