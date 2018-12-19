@@ -1,0 +1,31 @@
+[options]
+font = Source Code Pro Medium 11
+
+urgent_on_bell = true
+use_xft = true
+
+cursor_blink = true
+cursor_shape = ibeam
+
+[colors]
+background = rgba(0, 0, 0, 0.85)
+foreground = #C2C6C9
+foreground_bold = #FFFFFF
+cursor = #FF5557
+
+color0 = #222222
+color8 = #222222
+color1 = #9F6767
+color9 = #9F6767
+color2 = #92AC68
+color10 = #92AC68
+color3 = #D0D293
+color11 = #D0D293
+color4 = #9AACC3
+color12 = #9AACC3
+color5 = #BB77A4
+color13 = #BB77A4
+color6 = #FF5557
+color14 = #FF5557
+color7 = #777777
+color15 = #777777
