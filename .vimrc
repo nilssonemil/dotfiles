@@ -37,6 +37,7 @@ set smartcase
 set encoding=utf8
 set splitbelow
 
+colo peachpuff
 syntax on
 
 " indent guids for C-style code
