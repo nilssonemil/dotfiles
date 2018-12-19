@@ -4,6 +4,8 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+PATH="$PATH:$HOME/.bin"
+
 export BROWSER=opera
 export VISUAL=vim
 export EDITOR=$VISUAL
