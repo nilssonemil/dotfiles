@@ -22,7 +22,7 @@ set incsearch
 set showmatch
 
 " show relative line numbers
-set relativenumber
+set number relativenumber
 
 " hightlight currentline
 set cursorline
