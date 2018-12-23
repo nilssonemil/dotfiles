@@ -3,6 +3,7 @@
 #
 
 PATH="$PATH:$HOME/.bin"
+PATH="$PATH:$HOME/.cargo/bin"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

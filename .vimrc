@@ -3,8 +3,9 @@
 set exrc
 set secure
 
-filetype plugin on
-filetype indent on
+execute pathogen#infect()
+filetype plugin indent on
+syntax on
 
 " Set beam in insert mode, underline in replace and block in normal
 let &t_SI = "\<Esc>[6 q"
@@ -38,8 +39,6 @@ set encoding=utf8
 set splitbelow
 
 colo peachpuff
-syntax on
-
 " indent guids for C-style code
 " do not indent inside namespace
 " indent private/public with one space and following declaration with one
@@ -59,3 +58,5 @@ autocmd FIleType json			setlocal noet ts=2 sw=2
 autocmd FileType html			setlocal noet ts=2 sw=2
 autocmd FileType cpp			setlocal et ts=2 sw=2
 autocmd FileType c				setlocal et ts=2 sw=2
+
+let g:rustfmt_autosave = 1
