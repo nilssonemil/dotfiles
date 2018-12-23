@@ -38,7 +38,6 @@ set smartcase
 set encoding=utf8
 set splitbelow
 
-colo peachpuff
 " indent guids for C-style code
 " do not indent inside namespace
 " indent private/public with one space and following declaration with one
