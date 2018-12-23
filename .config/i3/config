@@ -125,16 +125,16 @@ bindsym $mod+m			mode "MOVE" focus floating
 bindsym $mod+o			floating enable; floating disable
 
 # change focus
-bindsym $mod+h			focus left
-bindsym $mod+j			focus down
-bindsym $mod+k			focus up
-bindsym $mod+l			focus right
+bindsym $mod+$left			focus left
+bindsym $mod+$down			focus down
+bindsym $mod+$up			focus up
+bindsym $mod+$right			focus right
 
 # move focused window
-bindsym $mod+Shift+h		move left
-bindsym $mod+Shift+j		move down
-bindsym $mod+Shift+k		move up
-bindsym $mod+Shift+l		move right
+bindsym $mod+Shift+$left		move left
+bindsym $mod+Shift+$down		move down
+bindsym $mod+Shift+$up			move up
+bindsym $mod+Shift+$right		move right
 
 # volume control
 bindsym XF86AudioMute exec amixer set Master toggle
@@ -176,10 +176,10 @@ bindsym $mod+Shift+5		move container to workspace $workspace5
 
 mode "SPOTIFY" {
 
-	bindsym h			exec playerctl -p spotify previous
-	bindsym l			exec playerctl -p spotify next
-	bindsym j 			exec playerctl -p spotify volume 0.1-
-	bindsym k 			exec playerdtl -p spotify volume 0.1+
+	bindsym $left			exec playerctl -p spotify previous
+	bindsym $right			exec playerctl -p spotify next
+	bindsym $down			exec playerctl -p spotify volume 0.1-
+	bindsym $up				exec playerdtl -p spotify volume 0.1+
 
 	bindsym s 			exec playerctl -p spotify stop
 	bindsym p			exec playerctl -p spotify play-pause
@@ -191,10 +191,10 @@ mode "SPOTIFY" {
 
 # move floating windows with keys
 mode "MOVE" {
-    bindsym h			move left
-    bindsym j			move down
-    bindsym k			move up
-    bindsym l			move right
+    bindsym $left			move left
+    bindsym $down			move down
+    bindsym $up				move up
+    bindsym $right			move right
 
     # use Return/Escape to go back to normal
     bindsym Return		mode "default"
@@ -203,10 +203,10 @@ mode "MOVE" {
 
 # resize window
 mode "RESIZE" {
-    bindsym h			resize shrink	width	10 px or 10 ppt
-    bindsym j			resize shrink	height	10 px or 10 ppt
-    bindsym k			resize grow	height	10 px or 10 ppt
-    bindsym l			resize grow	width	10 px or 10 ppt
+    bindsym $left			resize shrink	width	10 px or 10 ppt
+    bindsym $down			resize shrink	height	10 px or 10 ppt
+    bindsym $up				resize grow		height	10 px or 10 ppt
+    bindsym $right			resize grow		width	10 px or 10 ppt
 
     # use Return/Escape to go back to normal
     bindsym Return		mode "default"
