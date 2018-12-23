@@ -1,0 +1,224 @@
+font pango:Source Code Pro Medium 8
+
+#set modifiers
+set $mod Mod4
+floating_modifier $mod
+
+
+# navigation-keys
+set $up k
+set $down j
+set $left h
+set $right l
+
+# workspace variables
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+
+# colour variables
+set $null #FFFFFF
+
+set $urgent-bg #E53935
+set $focus-bg #333333
+#set $unfocus-bg #1F5679
+set $unfocus-bg #666666
+set $bar-bg #1F5679
+
+set $text #FFFFFF
+set $dim-text #B2B6B9
+set $indicator #993334
+
+# window-class		    border  background	    text		indicator
+client.focused		    $null   $focus-bg	    $text		$focus-bg
+client.focused_inactive	$null   $unfocus-bg	    $dim-text	$unfocus-bg
+client.unfocused	    $null   $unfocus-bg	    $dim-text	$unfocus-bg
+client.urgent		    $null   $urgent-bg	    $text		$urgent-bg
+
+
+# lock screen
+#bindsym $mod+x		exec /usr/local/bin/lock
+
+# i3-gaps settings
+gaps inner 25
+gaps outer 10
+
+#smart_gaps off # only gaps if more than one container in workspace
+smart_borders no_gaps # only have borders if not only container
+
+# make some workspaces use full screen
+workspace $workspace1	gaps inner 0
+workspace $workspace1 	gaps outer 0
+
+#for_window [class="Chromium"] border pixel 0
+
+# assign applications to workspaces
+assign [class="Spotify"] $workspace5
+assign [instance="spotify"] $workspace5
+
+# fix for spotify
+# NOTE: This does move it to previous workspace if on $workspace5
+for_window [class="Spotify"] move to workspace $workspace5
+
+for_window [class="Slack"] move scratchpad, scratchpad show, fullscreen
+
+assign [class="Chromium"] $workspace1
+assign [class="jetbrains-studio"] $workspace3
+
+assign [class="Wine"] $workspace3
+
+# enable floating terminals
+for_window [instance="floating"] floating enable
+
+# i3 settings
+workspace_auto_back_and_forth yes
+focus_follows_mouse no
+popup_during_fullscreen smart
+
+new_window pixel 2
+new_float normal
+hide_edge_borders none
+
+# hide borders for some applications
+for_window [class="chromium"] 	border pixel 0
+
+# put workspace on specific monitor by default
+#workspace $workspace1 output HDMI1
+#workspace $workspace2 output HDMI1
+#workspace $workspace5 output HDMI1
+
+# switch workspace between monitors
+bindsym $mod+Shift+m		move  workspace to output left
+
+# commands
+bindsym $mod+Shift+c		reload
+bindsym $mod+Shift+r		restart
+bindsym	$mod+Shift+e		exec i3-msg exit
+bindsym $mod+Shift+q		kill
+
+bindsym $mod+Return		exec termite
+bindsym $mod+Shift+Return	exec termite -d "`xcwd`"
+bindsym $mod+r			exec rofi -show run 
+# TODO: fix, cannot escape rofi after google
+bindsym $mod+g			exec rofi -show google -modi google:~/.local/share/rofi/google
+bindsym $mod+b			exec rofi -show books -modi books:~/.local/share/rofi/literature
+bindsym $mod+Shift+f 	exec rofi -show find -modi find:~/.local/share/rofi/finder
+
+bindsym $mod+f			fullscreen
+bindsym $mod+s			split v
+bindsym $mod+Shift+s		split h
+
+# floating
+bindsym $mod+t			focus mode_toggle
+bindsym $mod+Shift+t		floating toggle
+
+bindsym $mod+Shift+p		move scratchpad
+bindsym $mod+p			scratchpad show
+
+# scratchpad controls
+bindsym $mod+v 			mode "RESIZE"
+bindsym $mod+m			mode "MOVE" focus floating
+
+# remove from scratchpad
+bindsym $mod+o			floating enable; floating disable
+
+# change focus
+bindsym $mod+h			focus left
+bindsym $mod+j			focus down
+bindsym $mod+k			focus up
+bindsym $mod+l			focus right
+
+# move focused window
+bindsym $mod+Shift+h		move left
+bindsym $mod+Shift+j		move down
+bindsym $mod+Shift+k		move up
+bindsym $mod+Shift+l		move right
+
+# volume control
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioLowerVolume exec amixer set Master 1%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 1%+
+
+# enable volume controls when mod is pressed
+bindsym $mod+XF86AudioMute exec amixer set Master toggle
+bindsym $mod+XF86AudioLowerVolume exec amixer set Master 1%-
+bindsym $mod+XF86AudioRaiseVolume exec amixer set Master 1%+
+
+# screen brightness
+bindcode 232 exec light -U 0.5
+bindcode 233 exec light -A 0.5
+bindcode $mod+232 exec light -U 1
+bindcode $mod+233 exec light -A 1
+
+# saving printscreens in ~/media/pictures/screenshots
+bindcode 107 exec scrot $(xdg-user-dir PICTURES)/screenshots/%Y-%m-%d-%T.png 
+bindcode $mod+107 exec scrot $(xdg-user-dir PICTURES)/screenshots/%Y-%m-%d-%T.png
+
+# spotify controls
+bindsym $mod+section mode "SPOTIFY"
+
+# switching workspace
+bindsym $mod+1			workspace $workspace1
+bindsym $mod+2			workspace $workspace2
+bindsym $mod+3			workspace $workspace3
+bindsym $mod+4			workspace $workspace4
+bindsym $mod+5			workspace $workspace5
+
+# move containers between workspaces
+bindsym $mod+Shift+1		move container to workspace $workspace1
+bindsym $mod+Shift+2		move container to workspace $workspace2
+bindsym $mod+Shift+3		move container to workspace $workspace3
+bindsym $mod+Shift+4		move container to workspace $workspace4
+bindsym $mod+Shift+5		move container to workspace $workspace5
+
+
+mode "SPOTIFY" {
+
+	bindsym h			exec playerctl -p spotify previous
+	bindsym l			exec playerctl -p spotify next
+	bindsym j 			exec playerctl -p spotify volume 0.1-
+	bindsym k 			exec playerdtl -p spotify volume 0.1+
+
+	bindsym s 			exec playerctl -p spotify stop
+	bindsym p			exec playerctl -p spotify play-pause
+
+    bindsym Return		mode "default"
+    bindsym Escape		mode "default"
+}
+
+
+# move floating windows with keys
+mode "MOVE" {
+    bindsym h			move left
+    bindsym j			move down
+    bindsym k			move up
+    bindsym l			move right
+
+    # use Return/Escape to go back to normal
+    bindsym Return		mode "default"
+    bindsym Escape		mode "default"
+}
+
+# resize window
+mode "RESIZE" {
+    bindsym h			resize shrink	width	10 px or 10 ppt
+    bindsym j			resize shrink	height	10 px or 10 ppt
+    bindsym k			resize grow	height	10 px or 10 ppt
+    bindsym l			resize grow	width	10 px or 10 ppt
+
+    # use Return/Escape to go back to normal
+    bindsym Return		mode "default"
+    bindsym Escape		mode "default"
+}
+
+# for tablet kinda usage
+bindsym $mod+u 			exec xrandr --output eDP1 --rotate normal
+bindsym $mod+Shift+u 	exec xrandr --output eDP1 --rotate inverted
+
+# autostart
+exec dunst 
+exec compton --config $HOME/.config/compton.conf -b
+exec xautolock -time 5 -locker /usr/local/bin/lock -detectsleep
+exec --no-startup-id $HOME/.config/polybar/start
