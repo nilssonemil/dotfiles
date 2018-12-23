@@ -1,0 +1,34 @@
+URxvt*iso14755:		    false
+URxvt*iso14755_52:	    false
+
+URxvt.perl-ext:		    default,matcher
+URxvt.perl-ext-common:	    default,clipboard,selection-to-clipboard,url-select,keyboard-select
+URxvt.url-launcher:	    chromium
+URxvt.matcher.button:	    1
+
+URxvt.cursorBlink:	    1
+URxvt.cursorUnderline:	    1
+
+URxvt.urgentOnBell:	    true
+
+URxvt*font:		    xft:Source Code Pro Semibold:size=9
+URxvt.letterSpace:	    -1
+URxvt.lineSpace:	    -1
+
+URxvt.internalBorder:	    10
+
+URxvt*scrollBar:	    false
+URxvt*scrollBar_right:      true
+URxvt*scrollColor:	    #000000
+
+URxvt.transparent:	    true
+URxvt.shading:		    10
+
+! keysyms
+URxvt.keysym.C-p:	    perl:clipboard:paste
+URxvt.keysym.C-y:	    perl:clipboard:copy
+
+URxvt.keysym.C-k:	    perl:url-select:select_next
+
+URxvt.keysym.C-s:	    perl:keyboard-select:activate
+
