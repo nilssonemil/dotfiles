@@ -4,6 +4,7 @@
 
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
