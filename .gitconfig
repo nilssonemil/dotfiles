@@ -32,4 +32,4 @@
 [mergetool]
 	keepBackup=false
 [commit]
-	template = /home/emini/.templates/git_commit_msg
+	template = ~/.templates/git_commit_msg
