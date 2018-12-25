@@ -4,6 +4,11 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+export BROWSER=opera
+export VISUAL=vim
+export EDITOR=$VISUAL
 
 if [ "$PS1" ];
 then
