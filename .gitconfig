@@ -1,6 +1,7 @@
 [core]
 	excludesfile = ~/.gitexclude
 	pager = less -x1,5
+	autocrlf = input
 
 [user]
 	email = karl.emil.nilsson@gmail.com
