@@ -1,0 +1,64 @@
+[settings]
+screenchange-reload = true
+compositing-border = over
+
+[global/wm]
+margin-top = 0
+
+[colors]
+background = #55FFFFFF
+foreground = #000000 
+
+background-alt = #000000
+#foreground-alt = #C2C2C2
+foreground-alt = #999999
+
+alert = #CE2029 
+cursor = #FF5557
+primary = #FF5557
+secondary = #1F5679
+
+urgent-bg = #FF5557
+urgent-fg = #FFFFFF
+focused-fg = #FFFFFF
+unfocused = ${self.secondary}
+
+; IMPORT BARS
+
+[bar/laptop]
+include-file = /home/emini/.config/polybar/bars/laptop.ini
+
+[bar/desktop]
+include-file = /home/emini/.config/polybar/bars/desktop.ini
+
+; IMPORT MODULES
+
+[module/filesystem]
+include-file = /home/emini/.config/polybar/modules/filesystem.ini
+
+[module/i3]
+include-file = /home/emini/.config/polybar/modules/i3.ini
+
+[module/cpu]
+include-file = /home/emini/.config/polybar/modules/cpu.ini
+
+[module/memory]
+include-file = /home/emini/.config/polybar/modules/memory.ini
+
+[module/github]
+include-file = /home/emini/.config/polybar/modules/github.ini
+
+[module/wlan]
+include-file = /home/emini/.config/polybar/modules/wlan.ini
+
+[module/eth]
+include-file = /home/emini/.config/polybar/modules/eth.ini
+
+[module/date]
+include-file = /home/emini/.config/polybar/modules/date.ini
+
+[module/volume]
+include-file = /home/emini/.config/polybar/modules/volume.ini
+
+[module/battery]
+include-file = /home/emini/.config/polybar/modules/battery.ini
