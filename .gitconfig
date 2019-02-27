@@ -19,7 +19,7 @@
 	st = status
 	
 [pull]
-	rebase = preserve
+	ff = only
 
 [rebase]
 	autosquash = true
