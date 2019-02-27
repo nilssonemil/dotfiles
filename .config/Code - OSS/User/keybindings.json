@@ -17,4 +17,16 @@
         "command": "-undo",
         "when": "textInputFocus && !editorReadonly"
     },
+
+    //
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inProjectManagerList",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inProjectManagerList",
+    },
 ]

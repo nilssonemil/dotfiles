@@ -34,5 +34,15 @@
     "vim.statusBarColors.normal": "#fafbfc",
     "gitlens.menus": false,
     "workbench.activityBar.visible": false,
-    "zenMode.hideStatusBar": false
+    "zenMode.hideStatusBar": false,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-unknown-linux-gnu"
+    },
+    "rust.mode": "legacy",
+    "projectManager.git.baseFolders": [
+        "~/code", // apperently this does not work
+        "/home/emini/code"
+    ],
+    "projectManager.any.maxDepthRecursion": 4,
+    "zenMode.hideLineNumbers": false,
 }
