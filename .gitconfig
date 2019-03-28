@@ -3,10 +3,6 @@
 	pager = less -x1,5
 	autocrlf = input
 
-[user]
-	email = karl.emil.nilsson@gmail.com
-	name = Emil Nilsson
-
 [alias]
 	blog = log --oneline --graph --all
 	lo = log --oneline
@@ -34,3 +30,6 @@
 	keepBackup=false
 [commit]
 	template = ~/.templates/git_commit_msg
+
+[include]
+	path = ~/.gitconfig.local
