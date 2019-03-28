@@ -2,6 +2,7 @@
 	excludesfile = ~/.gitexclude
 	pager = less -x1,5
 	autocrlf = input
+	abbrev = 6
 
 [alias]
 	blog = log --oneline --graph --all
