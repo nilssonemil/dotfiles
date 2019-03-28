@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function is_force_push() {
+	for flag in "$@"
+	do
+		if [ "$flag" == "--force" ] || [ "$flag" == "-f" ]
+		then
+			return
+		fi 
+	done
+	false
+}
+
+if is_force_push "$@"
+then
+	echo "Oi idiot, use \`--force-with-lease\` instead. You don't want to end \ 
+		  up with a race-condition do you?"
+else
+	/usr/bin/git push $@
+fi

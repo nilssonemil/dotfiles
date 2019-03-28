@@ -14,6 +14,8 @@
 	mt = mergetool
 	dt = difftool
 	st = status
+
+	push = '!sh ~/.bin/idiot-lease'
 	
 [pull]
 	ff = only
