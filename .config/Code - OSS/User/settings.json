@@ -50,6 +50,13 @@
     ],
     "projectManager.any.maxDepthRecursion": 4,
     "zenMode.hideLineNumbers": false,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.idea": true,
+        "**/node_modules": true,
+        "**/target": true,
+        "**/yarn.lock": true
+    },
     "workbench.editor.restoreViewState": false,
     "files.hotExit": "off",
     "workbench.colorCustomizations": {
