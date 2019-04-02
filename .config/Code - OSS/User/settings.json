@@ -1,4 +1,8 @@
 {
+    "[clojure]": {
+        "editor.tabSize": 2,
+    },
+
     "workbench.colorTheme": "GitHub Plus",
     "workbench.iconTheme": "material-icon-theme",
     "editor.dragAndDrop": false,
