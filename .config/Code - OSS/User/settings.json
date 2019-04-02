@@ -3,6 +3,7 @@
         "editor.tabSize": 2,
     },
 
+    "window.restoreWindows": "none",
     "workbench.colorTheme": "GitHub Plus",
     "workbench.iconTheme": "material-icon-theme",
     "editor.dragAndDrop": false,
@@ -49,4 +50,9 @@
     ],
     "projectManager.any.maxDepthRecursion": 4,
     "zenMode.hideLineNumbers": false,
+    "workbench.editor.restoreViewState": false,
+    "files.hotExit": "off",
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#f5f5f5",
+    },
 }
