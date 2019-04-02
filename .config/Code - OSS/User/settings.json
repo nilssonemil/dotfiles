@@ -62,4 +62,6 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#f5f5f5",
     },
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 0,
 }
