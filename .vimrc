@@ -59,3 +59,12 @@ autocmd FileType cpp			setlocal et ts=2 sw=2
 autocmd FileType c				setlocal et ts=2 sw=2
 
 let g:rustfmt_autosave = 1
+
+" Set American English by default, but use British English for text files
+set spell spelllang=en_us
+autocmd FileType tex,markdown set spelllang=en_gb
+
+function! FixLastTypo()
+  normal! mm[s1z=`m
+endfunction
+noremap <leader>fs :call FixLastTypo()<cr>
