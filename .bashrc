@@ -3,6 +3,8 @@
 # inside are available.
 source $HOME/.completions/git.bash
 
+# Should hold the path to the TTY device of the current interactive shell.
+export GPG_TTY="$(tty)"
 
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from

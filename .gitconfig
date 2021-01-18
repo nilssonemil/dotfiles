@@ -7,6 +7,9 @@
 [commit]
   template = ~/.templates/git_commit_msg
   verbose = true
+  gpgsign = true
+[gpg]
+  program = gpg
 [pull]
   ff = only
 [rebase]
