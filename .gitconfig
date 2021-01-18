@@ -1,2 +1,13 @@
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
+  path = ~/.gitconfig.aliases
+[core]
+  autocrlf = input
+  excludesfile = ~/.gitexclude
+[commit]
+  template = ~/.templates/git_commit_msg
+  verbose = true
+[pull]
+  ff = only
+[rebase]
+  autosquash = true

@@ -1,0 +1,8 @@
+[alias]
+  blog = log --oneline --graph --all
+  co = checkout
+  squash = commit --squash
+  fixup = commit --fixup
+
+  so = "!git branch --set-upstream-to=origin/${git symbolic-ref --short HEAD}"
+  ro = "!git reset --heard origin/${git symbolic-ref --short HEAD}"
