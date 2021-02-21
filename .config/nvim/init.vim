@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 set nowrap " Avoid wrapping lines
 set number relativenumber
 set splitright
