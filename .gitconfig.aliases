@@ -6,4 +6,4 @@
   please = push --force-with-lease
 
   so = "!git branch --set-upstream-to=origin/${git symbolic-ref --short HEAD}"
-  ro = "!git reset --heard origin/${git symbolic-ref --short HEAD}"
+  ro = "!git reset --hard origin/${git symbolic-ref --short HEAD}"
