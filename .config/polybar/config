@@ -1,0 +1,17 @@
+[settings]
+screenchange-reload = true
+compositing-border = over
+
+[global/wm]
+margin-top = 0
+
+[colors]
+
+[bar/builtin]
+include-file = /home/emini/.config/polybar/bars/builtin.ini
+
+[module/bspwm]
+include-file = /home/emini/.config/polybar/modules/bspwm.ini
+
+[module/date]
+include-file = /home/emini/.config/polybar/modules/date.ini
