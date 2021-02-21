@@ -6,6 +6,9 @@
 alt + Return
 	alacritty
 
+alt + shift + Return
+	alacritty --working-directory `xcwd`
+
 # program launcher
 alt + r
 	dmenu_run
