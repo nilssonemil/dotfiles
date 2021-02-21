@@ -4,6 +4,8 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitexclude
+  hooksPath = ~/.githooks
+  editor = nvim
 [commit]
   template = ~/.templates/git_commit_msg
   verbose = true
